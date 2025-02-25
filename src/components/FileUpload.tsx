@@ -17,7 +17,7 @@ const FileUpload: React.FC<FileUploadProps> = ({ onUpload }) => {
 	const handleUpload = async () => {
 		if (!file) return;
 		try {
-			const message = await uploadFile(file);
+			await uploadFile(file);
 			onUpload("File uploaded successfully!");
 		} catch (error) {
 			console.error("Upload failed:", error);
