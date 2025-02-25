@@ -1,50 +1,96 @@
-# React + TypeScript + Vite
+# 🧠 RAG Chat System (Frontend)
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+This is the **React + TypeScript + Vite** frontend for the **Retrieval-Augmented Generation (RAG) Chat System**. It provides a user-friendly interface for uploading files and interacting with an AI-powered chatbot.
 
-Currently, two official plugins are available:
+---
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+## 🚀 Features
 
-## Expanding the ESLint configuration
+- 📂 **File Upload** – Upload files to process data.  
+- 💬 **AI Chat Interface** – Ask queries related to uploaded content.  
+- ⚡ **Fast & Responsive UI** – Built with **React**, **Vite**, and **Tailwind CSS**.  
+- 🔄 **Real-time Feedback** – Displays responses instantly.  
 
-If you are developing a production application, we recommend updating the configuration to enable type aware lint rules:
+---
 
-- Configure the top-level `parserOptions` property like this:
+## 🏗️ Project Structure
 
-```js
-export default tseslint.config({
-  languageOptions: {
-    // other options...
-    parserOptions: {
-      project: ['./tsconfig.node.json', './tsconfig.app.json'],
-      tsconfigRootDir: import.meta.dirname,
-    },
-  },
-})
+```
+frontend/
+│── src/
+│   ├── api/
+│   │   ├── api.ts            # Handles API requests
+│   │
+│   ├── components/
+│   │   ├── Chat.tsx          # Chat interface
+│   │   ├── FileUpload.tsx    # File upload component
+│   │
+│   ├── pages/
+│   │   ├── Home.tsx          # Main page layout
+│   │
+│   ├── App.tsx               # Root component
+│   ├── main.tsx              # Entry point
+│   ├── index.css             # Global styles
+│   ├── vite-env.d.ts         # TypeScript environment definitions
+│
+│── public/                   # Static assets
+│── .gitignore                 # Ignored files
+│── package.json               # Dependencies and scripts
+│── tsconfig.json               # TypeScript configuration
+│── vite.config.ts              # Vite configuration
+│── README.md                   # Project documentation
 ```
 
-- Replace `tseslint.configs.recommended` to `tseslint.configs.recommendedTypeChecked` or `tseslint.configs.strictTypeChecked`
-- Optionally add `...tseslint.configs.stylisticTypeChecked`
-- Install [eslint-plugin-react](https://github.com/jsx-eslint/eslint-plugin-react) and update the config:
+---
 
-```js
-// eslint.config.js
-import react from 'eslint-plugin-react'
+## 📦 Installation
 
-export default tseslint.config({
-  // Set the react version
-  settings: { react: { version: '18.3' } },
-  plugins: {
-    // Add the react plugin
-    react,
-  },
-  rules: {
-    // other rules...
-    // Enable its recommended rules
-    ...react.configs.recommended.rules,
-    ...react.configs['jsx-runtime'].rules,
-  },
-})
-```
+1. **Clone the repository**
+   ```sh
+   git clone https://github.com/yourusername/rag-chat-frontend.git
+   cd rag-chat-frontend
+   ```
+
+2. **Install dependencies**
+   ```sh
+   npm install
+   ```
+
+3. **Start the development server**
+   ```sh
+   npm run dev
+   ```
+   The app will be available at **`http://localhost:5173`**.
+
+---
+
+## ⚙️ Configuration
+
+- Ensure the **backend** server is running on `http://localhost:8080`.
+- Modify `API_BASE_URL` in `src/api/api.ts` if needed.
+
+---
+
+## 🛠️ Built With
+
+- [React](https://react.dev/) – JavaScript library for building UIs  
+- [TypeScript](https://www.typescriptlang.org/) – Strongly typed JavaScript  
+- [Vite](https://vitejs.dev/) – Fast frontend tooling  
+- [Tailwind CSS](https://tailwindcss.com/) – Utility-first CSS framework  
+- [Axios](https://axios-http.com/) – HTTP requests handling  
+
+---
+
+## 🤝 Contributing
+
+Contributions are welcome! Feel free to fork, submit issues, or make pull requests.
+
+---
+
+## 📜 License
+
+This project is licensed under the **MIT License**.
+
+---
+
+🚀 Happy Coding! 🎉
