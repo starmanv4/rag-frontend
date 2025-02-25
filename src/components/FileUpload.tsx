@@ -18,7 +18,7 @@ const FileUpload: React.FC<FileUploadProps> = ({ onUpload }) => {
 		if (!file) return;
 		try {
 			const message = await uploadFile(file);
-			onUpload(message);
+			onUpload("File uploaded successfully!");
 		} catch (error) {
 			console.error("Upload failed:", error);
 			onUpload("File upload failed.");
@@ -26,9 +26,27 @@ const FileUpload: React.FC<FileUploadProps> = ({ onUpload }) => {
 	};
 
 	return (
-		<div>
-			<input type="file" onChange={handleFileChange} />
-			<button onClick={handleUpload} disabled={!file}>
+		<div className="flex flex-col items-center gap-3 p-4 bg-white shadow-lg rounded-lg border border-gray-200">
+			<label className="cursor-pointer bg-blue-500 text-white font-semibold px-5 py-2 rounded-lg shadow-md hover:bg-blue-600 transition">
+				Choose File
+				<input
+					type="file"
+					onChange={handleFileChange}
+					className="hidden"
+				/>
+			</label>
+
+			{file && (
+				<p className="text-gray-700 text-sm font-medium bg-gray-100 px-3 py-2 rounded-lg shadow-sm">
+					📄 {file.name}
+				</p>
+			)}
+
+			<button
+				onClick={handleUpload}
+				disabled={!file}
+				className="px-5 py-2 bg-green-500 text-white font-semibold rounded-lg shadow-md hover:bg-green-600 transition disabled:opacity-50"
+			>
 				Upload
 			</button>
 		</div>
